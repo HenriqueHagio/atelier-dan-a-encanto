@@ -3,7 +3,6 @@ import ValuesSection from "@/components/ValuesSection";
 import ModalitiesSection from "@/components/ModalitiesSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
-import WhatsAppButton from "@/components/WhatsAppButton";
 
 const Index = () => {
   return (
@@ -13,7 +12,6 @@ const Index = () => {
       <ModalitiesSection />
       <ContactSection />
       <Footer />
-      <WhatsAppButton />
     </main>
   );
 };
