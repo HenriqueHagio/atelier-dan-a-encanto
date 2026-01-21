@@ -1,41 +1,101 @@
 import { motion } from "framer-motion";
-import { Heart } from "lucide-react";
+import { Instagram, Facebook, Youtube } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="border-t border-border bg-card px-6 py-12 lg:px-16">
+    <footer className="bg-primary px-6 py-16 text-primary-foreground lg:px-16">
       <div className="mx-auto max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="flex flex-col items-center justify-between gap-6 md:flex-row"
+          className="grid gap-12 md:grid-cols-3"
         >
-          <div className="text-center md:text-left">
-            <h3 className="font-display text-2xl font-semibold text-primary">
+          {/* Brand */}
+          <div>
+            <h3 className="font-display text-3xl font-light italic">
               Atelier Dança
             </h3>
-            <p className="mt-2 font-body text-sm text-muted-foreground">
+            <p className="mt-4 font-body text-sm leading-relaxed text-primary-foreground/70">
+              Uma escola onde a dança é arte, encanto e magia. Transformando vidas através do movimento desde 2024.
+            </p>
+            {/* Social Icons */}
+            <div className="mt-6 flex gap-4">
+              <a 
+                href="#" 
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-primary-foreground/20 transition-colors hover:bg-primary-foreground/10"
+              >
+                <Instagram className="h-4 w-4" />
+              </a>
+              <a 
+                href="#" 
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-primary-foreground/20 transition-colors hover:bg-primary-foreground/10"
+              >
+                <Facebook className="h-4 w-4" />
+              </a>
+              <a 
+                href="#" 
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-primary-foreground/20 transition-colors hover:bg-primary-foreground/10"
+              >
+                <Youtube className="h-4 w-4" />
+              </a>
+            </div>
+          </div>
+
+          {/* Navigation */}
+          <div>
+            <h4 className="font-body text-xs font-medium uppercase tracking-[0.2em] text-primary-foreground/50">
+              Navegação
+            </h4>
+            <nav className="mt-6 space-y-3">
+              <a href="#sobre" className="block font-body text-sm text-primary-foreground/80 transition-colors hover:text-primary-foreground">
+                Sobre Nós
+              </a>
+              <a href="#modalidades" className="block font-body text-sm text-primary-foreground/80 transition-colors hover:text-primary-foreground">
+                Modalidades
+              </a>
+              <a href="#contato" className="block font-body text-sm text-primary-foreground/80 transition-colors hover:text-primary-foreground">
+                Contato
+              </a>
+            </nav>
+          </div>
+
+          {/* Modalities */}
+          <div>
+            <h4 className="font-body text-xs font-medium uppercase tracking-[0.2em] text-primary-foreground/50">
+              Modalidades
+            </h4>
+            <nav className="mt-6 space-y-3">
+              <a href="#modalidades" className="block font-body text-sm text-primary-foreground/80 transition-colors hover:text-primary-foreground">
+                Ballet
+              </a>
+              <a href="#modalidades" className="block font-body text-sm text-primary-foreground/80 transition-colors hover:text-primary-foreground">
+                Jazz
+              </a>
+              <a href="#modalidades" className="block font-body text-sm text-primary-foreground/80 transition-colors hover:text-primary-foreground">
+                Contemporâneo
+              </a>
+              <a href="#modalidades" className="block font-body text-sm text-primary-foreground/80 transition-colors hover:text-primary-foreground">
+                Tecido Acrobático
+              </a>
+              <a href="#modalidades" className="block font-body text-sm text-primary-foreground/80 transition-colors hover:text-primary-foreground">
+                K-pop
+              </a>
+            </nav>
+          </div>
+        </motion.div>
+
+        {/* Bottom */}
+        <div className="mt-16 border-t border-primary-foreground/10 pt-8">
+          <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
+            <p className="font-body text-xs text-primary-foreground/50">
+              © {new Date().getFullYear()} Atelier Dança. Todos os direitos reservados.
+            </p>
+            <p className="font-body text-xs text-primary-foreground/50">
               Arte • Encanto • Magia
             </p>
           </div>
-
-          <div className="flex items-center gap-8 font-body text-sm text-muted-foreground">
-            <a href="#sobre" className="transition-colors hover:text-primary">Sobre</a>
-            <a href="#modalidades" className="transition-colors hover:text-primary">Modalidades</a>
-            <a href="#contato" className="transition-colors hover:text-primary">Contato</a>
-          </div>
-
-          <p className="flex items-center gap-1 font-body text-sm text-muted-foreground">
-            Feito com <Heart className="h-4 w-4 text-accent" fill="currentColor" /> para a dança
-          </p>
-        </motion.div>
-
-        <div className="mt-8 border-t border-border pt-8 text-center">
-          <p className="font-body text-xs text-muted-foreground">
-            © {new Date().getFullYear()} Atelier Dança. Todos os direitos reservados.
-          </p>
         </div>
       </div>
     </footer>
