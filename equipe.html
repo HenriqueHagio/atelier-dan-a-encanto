@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atelier Dança - Magia, Arte e Encanto</title>
+    <title>Equipe - Atelier Dança</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="assets/LOGOTIPO_05-SÍMBOLO_BEGE.png" type="image/png">
+    <link rel="stylesheet" href="equipe.css">
+    <link rel="icon" href="/assets/LOGOTIPO_05-SÍMBOLO_BEGE.png" type="image/png">
 </head>
 <body>
     <!-- Cabeçalho -->
@@ -14,18 +15,20 @@
             <div class="header-content">
                 <div class="logo">
                     <a href="index.html">
-                        <img src="assets/LOGOTIPO_05-SÍMBOLO_ROSÉ.png" alt="Logo atelier rosé">
-                    </a>
+                    <img src="assets/LOGOTIPO_05-SÍMBOLO_ROSÉ.png" alt="Logo atelier rosé">
+                </a>
+                
                 </div>
                 
                 <!-- Menu Desktop -->
                 <nav class="nav-desktop">
                     <ul>
-                        <li><a href="#inicio">Início</a></li>
-                        <li><a href="equipe.html">Equipe</a></li>
+                        <li><a href="index.html#inicio">Início</a></li>
+                        <li><a href="equipe.html" class="active">Equipe</a></li>
                         <li><a href="sobre.html">Sobre Nós</a></li>
-                        <li><a href="#depoimentos">Depoimentos</a></li>
-                        <li><a href="#contato">Contato</a></li>
+                        <li><a href="index.html#depoimentos">Depoimentos</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                        <li><a href="index.html#contato">Contato</a></li>
                     </ul>
                 </nav>
 
@@ -60,11 +63,12 @@
         <!-- Menu Mobile -->
         <nav class="nav-mobile" id="navMobile">
             <ul>
-                <li><a href="#inicio">Início</a></li>
-                <li><a href="#equipe">Equipe</a></li>
-                <li><a href="#sobre">Sobre Nós</a></li>
-                <li><a href="#depoimentos">Depoimentos</a></li>
-                <li><a href="#contato">Contato</a></li>
+                <li><a href="index.html#inicio">Início</a></li>
+                <li><a href="equipe.html">Equipe</a></li>
+                <li><a href="index.html#sobre">Sobre Nós</a></li>
+                <li><a href="index.html#depoimentos">Depoimentos</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="index.html#contato">Contato</a></li>
             </ul>
             <div class="social-links-mobile">
                 <a href="#" target="_blank" aria-label="Facebook">
@@ -86,222 +90,84 @@
         </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="inicio">
-        <div class="hero-content">
-            <div class="hero-image">
-                <div class="placeholder-image">
-                    <svg width="200" height="200" viewBox="0 0 200 200">
-                        <circle cx="100" cy="100" r="80" fill="#f8e5e5"/>
-                        <text x="100" y="110" text-anchor="middle" font-size="16" fill="#c49a9a">Imagem</text>
-                    </svg>
-                </div>
-            </div>
-            <div class="hero-text">
-                <h2>Transformar vidas através da nossa missão nos motiva diariamente.</h2>
-                <p class="hero-author">– Nome do Fundador</p>
-            </div>
+    <!-- Page Title -->
+    <section class="page-title">
+        <div class="container">
+            <h1>Equipe</h1>
         </div>
     </section>
 
-    <!-- Destaque Section -->
-    <section class="featured">
+    <!-- Team Section -->
+    <section class="team-section">
         <div class="container">
-            <h2>Nosso Destaque</h2>
-            <p>Em 2025 realizamos eventos incríveis que encantaram nossos clientes, parceiros e toda nossa equipe. Foram momentos de muita dedicação, história e emoção!</p>
-            <a href="#" class="btn-primary">Ver Mais Eventos</a>
-        </div>
-    </section>
-
-    <!-- Modalidades Section -->
-    <section class="services" id="sobre">
-        <div class="container">
-            <h3 class="section-label">Modalidades</h3>
-            
-            <div class="service-item">
-                <div class="service-image">
-                    <img alt="Ballet Infantil" src="assets/index/balletInfantil.JPG"/>
-                </div>
-                <div class="service-content">
-                    <h2>Ballet Infantil</h2>
-                    <p>Descrição detalhada do nosso serviço principal, destacando os benefícios e diferenciais que oferecemos aos nossos clientes com qualidade e dedicação.</p>
-                </div>
-            </div>
-
-            <div class="service-item reverse">
-                <div class="service-image">
-                    <img alt="Ballet Adulto" src="assets/index/balletAdulto.JPG"/>
-                </div>
-                <div class="service-content">
-                    <h2>Ballet Adulto</h2>
-                    <p>Nosso segundo serviço é pensado para atender necessidades específicas, com atenção aos detalhes e comprometimento com resultados excepcionais.</p>
-                </div>
-            </div>
-
-            <div class="service-item">
-                <div class="service-image">
-                    <img alt="Tecido Infantil" src="assets/index/tecidoInfantil.JPG"/>
-                </div>
-                <div class="service-content">
-                    <h2>Tecido Acrobático Infantil</h2>
-                    <p>Para quem procura excelência e inovação, este serviço é a escolha perfeita, proporcionando liberdade criativa e resultados diferenciados.</p>
-                </div>
-            </div>
-            <div class="service-item">
-                <div class="service-content">
-                    <h2>Tecido Acrobático Adulto</h2>
-                    <p>Para quem procura excelência e inovação, este serviço é a escolha perfeita, proporcionando liberdade criativa e resultados diferenciados.</p>
-                </div>
-                <div class="service-image">
-                    <img alt="Tecido Adulto" src="assets/index/tecidoAdulto.JPG"/>
-                </div>
-            </div>
-            <div class="service-item">
-                <div class="service-image">
-                    <img alt="Jazz Infantil" src="assets/index/jazzInfantil.JPG"/>
-                </div>
-                <div class="service-content">
-                    <h2>Jazz Infantil</h2>
-                    <p>Para quem procura excelência e inovação, este serviço é a escolha perfeita, proporcionando liberdade criativa e resultados diferenciados.</p>
-                </div>
-            </div>
-            <div class="service-item">
-                <div class="service-content">
-                    <h2>Jazz Adulto</h2>
-                    <p>Para quem procura excelência e inovação, este serviço é a escolha perfeita, proporcionando liberdade criativa e resultados diferenciados.</p>
-                </div>
-                
-                <div class="service-image">
-                    <img alt="Jazz Adulto" src="assets/index/jazzAdulto.JPG"/>
-                </div>
-            </div>
-            <div class="service-item">
-                <div class="service-image">
-                    <img alt="K-pop" src="assets/index/kpop.jpeg"/>
-                </div>
-                <div class="service-content">
-                    <h2>K-Pop</h2>
-                    <p>Para quem procura excelência e inovação, este serviço é a escolha perfeita, proporcionando liberdade criativa e resultados diferenciados.</p>
-                </div>
-            </div>
-            <div class="service-item">
-                <div class="service-content">
-                    <h2>Contemporâneo</h2>
-                    <p>Para quem procura excelência e inovação, este serviço é a escolha perfeita, proporcionando liberdade criativa e resultados diferenciados.</p>
-                </div>
-                <div class="service-image">
-                    <img alt="contemporaneo " src="assets/index/contemporaneo.JPG"/>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Depoimentos Section -->
-    <section class="testimonials" id="depoimentos">
-        <div class="container">
-            <h3 class="section-label">Depoimentos</h3>
-            
-            <div class="testimonials-slider">
-                <div class="testimonial-track" id="testimonialTrack">
-                    <div class="testimonial-item">
-                        <p class="testimonial-text">Excelente atendimento e profissionalismo. A equipe é muito preparada e tem conexão genuína com os clientes. Recomendo para todos que buscam qualidade e dedicação!</p>
-                        <div class="testimonial-author">
-                            <div class="author-image">
-                                <div class="placeholder-avatar">
-                                    <svg width="80" height="80" viewBox="0 0 80 80">
-                                        <circle cx="40" cy="40" r="40" fill="#f8e5e5"/>
-                                        <text x="40" y="45" text-anchor="middle" font-size="12" fill="#c49a9a">Foto</text>
-                                    </svg>
-                                </div>
-                            </div>
-                            <div class="author-info">
-                                <strong>Maria Silva</strong>
-                                <span>Cliente</span>
-                            </div>
-                        </div>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="/assets/equipe/alyx.JPG" alt="alyx">
                     </div>
-
-                    <div class="testimonial-item">
-                        <p class="testimonial-text">Desde a primeira vez que conhecemos, foi amor à primeira vista. É de fato a realização de um sonho. Cada ano que passa, ficamos mais satisfeitos com os resultados.</p>
-                        <div class="testimonial-author">
-                            <div class="author-image">
-                                <div class="placeholder-avatar">
-                                    <svg width="80" height="80" viewBox="0 0 80 80">
-                                        <circle cx="40" cy="40" r="40" fill="#e5f0f8"/>
-                                        <text x="40" y="45" text-anchor="middle" font-size="12" fill="#9ab8c4">Foto</text>
-                                    </svg>
-                                </div>
-                            </div>
-                            <div class="author-info">
-                                <strong>João e Ana</strong>
-                                <span>Parceiros</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="testimonial-item">
-                        <p class="testimonial-text">Uma das melhores experiências que já tive. Me deu a oportunidade de realizar algo que sempre quis. Todos me acolheram muito bem, os profissionais são ótimos!</p>
-                        <div class="testimonial-author">
-                            <div class="author-image">
-                                <div class="placeholder-avatar">
-                                    <svg width="80" height="80" viewBox="0 0 80 80">
-                                        <circle cx="40" cy="40" r="40" fill="#e5f8e8"/>
-                                        <text x="40" y="45" text-anchor="middle" font-size="12" fill="#9ac4a0">Foto</text>
-                                    </svg>
-                                </div>
-                            </div>
-                            <div class="author-info">
-                                <strong>Gabriela Santos</strong>
-                                <span>Cliente</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="testimonial-item">
-                        <p class="testimonial-text">É terapêutico para mim. Às vezes chego sem muita motivação, mas quando estou aqui as coisas mudam. Acho o ambiente incrível, principalmente pela equipe que torna tudo mais leve.</p>
-                        <div class="testimonial-author">
-                            <div class="author-image">
-                                <div class="placeholder-avatar">
-                                    <svg width="80" height="80" viewBox="0 0 80 80">
-                                        <circle cx="40" cy="40" r="40" fill="#f8f0e5"/>
-                                        <text x="40" y="45" text-anchor="middle" font-size="12" fill="#c4b29a">Foto</text>
-                                    </svg>
-                                </div>
-                            </div>
-                            <div class="author-info">
-                                <strong>Larissa Oliveira</strong>
-                                <span>Cliente</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="testimonial-item">
-                        <p class="testimonial-text">Estou aqui desde 2019. O que foi mais importante foi o acolhimento e o respeito. Quando cheguei era tudo novo, mas o que mais me chamou atenção foi o carinho e profissionalismo.</p>
-                        <div class="testimonial-author">
-                            <div class="author-image">
-                                <div class="placeholder-avatar">
-                                    <svg width="80" height="80" viewBox="0 0 80 80">
-                                        <circle cx="40" cy="40" r="40" fill="#f0e5f8"/>
-                                        <text x="40" y="45" text-anchor="middle" font-size="12" fill="#b89ac4">Foto</text>
-                                    </svg>
-                                </div>
-                            </div>
-                            <div class="author-info">
-                                <strong>Fernanda Costa</strong>
-                                <span>Cliente</span>
-                            </div>
-                        </div>
+                    <div class="member-info">
+                        <h3>Alyx Dantas</h3>
+                        <p class="member-role">DIRETOR E PROF. DE BALLET, JAZZ E CONTEMPORÂNEO ADULTO</p>
                     </div>
                 </div>
 
-                <button class="slider-btn prev" id="prevBtn" aria-label="Anterior">‹</button>
-                <button class="slider-btn next" id="nextBtn" aria-label="Próximo">›</button>
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="/assets/equipe/balletAdulto.JPG" alt="profBalletAdulto">
+                    </div>
+                    <div class="member-info">
+                        <h3>Yasmim Cavalcante</h3>
+                        <p class="member-role">COORDENADORA E PROF. DE BALLET ADULTO E INFANTOJUVENIL</p>
+                    </div>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="/assets/equipe/balletInfantil.JPG" alt="profBallet">
+                    </div>
+                    <div class="member-info">
+                        <h3>Maria Elisa</h3>
+                        <p class="member-role">PROFESSORA DE BALLET INFANTIL</p>
+                    </div>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="/assets/equipe/profJazz.JPG" alt="profJazz">
+                    </div>
+                    <div class="member-info">
+                        <h3>Ana Vitória</h3>
+                        <p class="member-role">PROFESSORA DE JAZZ ADULTO E INFANTOJUVENIL</p>
+                    </div>
+                </div>
+
+                <!-- Membro 5 -->
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="/assets/equipe/profTecido.JPG" alt="ProfessoraTecido">
+                    </div>
+                    <div class="member-info">
+                        <h3>Luisa Uchôa</h3>
+                        <p class="member-role">PROF. DE TECIDO ACROBÁTICO INFANTIL, JUVENIL E ADULTO</p>
+                    </div>
+                </div>
+
+                <!-- Membro 6 -->
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="/assets/equipe/profKpop.jpeg" alt="profKpop">
+                    </div>
+                    <div class="member-info">
+                        <h3>Yasmin Gomes</h3>
+                        <p class="member-role">PROF. DE K-POP INFANTIL E ADULTO E PROF. DE JAZZ FUNK</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Contato Section -->
-    <section class="contact" id="contato">
+        <section class="contact" id="contato">
         <div class="container">
             <h2 class="contact-title">Entre em contato</h2>
             
@@ -390,8 +256,6 @@
              
         </div>
     </section>
-
-
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -419,7 +283,7 @@
     </footer>
 
     <!-- Botão WhatsApp Flutuante -->
-    <a href="https://api.whatsapp.com/send?phone=556892247013&text=Olá,%20gostaria%20de%20mais%20informações" 
+    <a href="https://api.whatsapp.com/send?phone=5500000000000&text=Olá,%20gostaria%20de%20mais%20informações" 
        class="whatsapp-float" 
        target="_blank" 
        aria-label="WhatsApp">

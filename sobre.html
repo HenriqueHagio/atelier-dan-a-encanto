@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atelier Dança - Magia, Arte e Encanto</title>
+    <title>Sobre Nós - Sua Empresa</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="assets/LOGOTIPO_05-SÍMBOLO_BEGE.png" type="image/png">
+    <link rel="stylesheet" href="sobre.css">
 </head>
 <body>
     <!-- Cabeçalho -->
@@ -21,11 +21,11 @@
                 <!-- Menu Desktop -->
                 <nav class="nav-desktop">
                     <ul>
-                        <li><a href="#inicio">Início</a></li>
+                        <li><a href="index.html#inicio">Início</a></li>
                         <li><a href="equipe.html">Equipe</a></li>
-                        <li><a href="sobre.html">Sobre Nós</a></li>
-                        <li><a href="#depoimentos">Depoimentos</a></li>
-                        <li><a href="#contato">Contato</a></li>
+                        <li><a href="sobre.html" class="active">Sobre Nós</a></li>
+                        <li><a href="index.html#depoimentos">Depoimentos</a></li>
+                        <li><a href="index.html#contato">Contato</a></li>
                     </ul>
                 </nav>
 
@@ -60,11 +60,11 @@
         <!-- Menu Mobile -->
         <nav class="nav-mobile" id="navMobile">
             <ul>
-                <li><a href="#inicio">Início</a></li>
-                <li><a href="#equipe">Equipe</a></li>
-                <li><a href="#sobre">Sobre Nós</a></li>
-                <li><a href="#depoimentos">Depoimentos</a></li>
-                <li><a href="#contato">Contato</a></li>
+                <li><a href="index.html#inicio">Início</a></li>
+                <li><a href="equipe.html">Equipe</a></li>
+                <li><a href="sobre.html">Sobre Nós</a></li>
+                <li><a href="index.html#depoimentos">Depoimentos</a></li>
+                <li><a href="index.html#contato">Contato</a></li>
             </ul>
             <div class="social-links-mobile">
                 <a href="#" target="_blank" aria-label="Facebook">
@@ -86,216 +86,126 @@
         </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="inicio">
-        <div class="hero-content">
-            <div class="hero-image">
-                <div class="placeholder-image">
-                    <svg width="200" height="200" viewBox="0 0 200 200">
-                        <circle cx="100" cy="100" r="80" fill="#f8e5e5"/>
-                        <text x="100" y="110" text-anchor="middle" font-size="16" fill="#c49a9a">Imagem</text>
-                    </svg>
-                </div>
-            </div>
-            <div class="hero-text">
-                <h2>Transformar vidas através da nossa missão nos motiva diariamente.</h2>
-                <p class="hero-author">– Nome do Fundador</p>
-            </div>
+    <!-- Page Title -->
+    <section class="page-title">
+        <div class="container">
+            <h1>sobre nós</h1>
         </div>
     </section>
 
-    <!-- Destaque Section -->
-    <section class="featured">
+    <!-- About Content Section -->
+    <section class="about-content">
         <div class="container">
-            <h2>Nosso Destaque</h2>
-            <p>Em 2025 realizamos eventos incríveis que encantaram nossos clientes, parceiros e toda nossa equipe. Foram momentos de muita dedicação, história e emoção!</p>
-            <a href="#" class="btn-primary">Ver Mais Eventos</a>
-        </div>
-    </section>
-
-    <!-- Modalidades Section -->
-    <section class="services" id="sobre">
-        <div class="container">
-            <h3 class="section-label">Modalidades</h3>
-            
-            <div class="service-item">
-                <div class="service-image">
-                    <img alt="Ballet Infantil" src="assets/index/balletInfantil.JPG"/>
-                </div>
-                <div class="service-content">
-                    <h2>Ballet Infantil</h2>
-                    <p>Descrição detalhada do nosso serviço principal, destacando os benefícios e diferenciais que oferecemos aos nossos clientes com qualidade e dedicação.</p>
-                </div>
-            </div>
-
-            <div class="service-item reverse">
-                <div class="service-image">
-                    <img alt="Ballet Adulto" src="assets/index/balletAdulto.JPG"/>
-                </div>
-                <div class="service-content">
-                    <h2>Ballet Adulto</h2>
-                    <p>Nosso segundo serviço é pensado para atender necessidades específicas, com atenção aos detalhes e comprometimento com resultados excepcionais.</p>
-                </div>
-            </div>
-
-            <div class="service-item">
-                <div class="service-image">
-                    <img alt="Tecido Infantil" src="assets/index/tecidoInfantil.JPG"/>
-                </div>
-                <div class="service-content">
-                    <h2>Tecido Acrobático Infantil</h2>
-                    <p>Para quem procura excelência e inovação, este serviço é a escolha perfeita, proporcionando liberdade criativa e resultados diferenciados.</p>
-                </div>
-            </div>
-            <div class="service-item">
-                <div class="service-content">
-                    <h2>Tecido Acrobático Adulto</h2>
-                    <p>Para quem procura excelência e inovação, este serviço é a escolha perfeita, proporcionando liberdade criativa e resultados diferenciados.</p>
-                </div>
-                <div class="service-image">
-                    <img alt="Tecido Adulto" src="assets/index/tecidoAdulto.JPG"/>
-                </div>
-            </div>
-            <div class="service-item">
-                <div class="service-image">
-                    <img alt="Jazz Infantil" src="assets/index/jazzInfantil.JPG"/>
-                </div>
-                <div class="service-content">
-                    <h2>Jazz Infantil</h2>
-                    <p>Para quem procura excelência e inovação, este serviço é a escolha perfeita, proporcionando liberdade criativa e resultados diferenciados.</p>
-                </div>
-            </div>
-            <div class="service-item">
-                <div class="service-content">
-                    <h2>Jazz Adulto</h2>
-                    <p>Para quem procura excelência e inovação, este serviço é a escolha perfeita, proporcionando liberdade criativa e resultados diferenciados.</p>
-                </div>
+            <div class="about-intro">
+                <h4 class="section-subtitle">O início da Nossa Empresa</h4>
                 
-                <div class="service-image">
-                    <img alt="Jazz Adulto" src="assets/index/jazzAdulto.JPG"/>
-                </div>
-            </div>
-            <div class="service-item">
-                <div class="service-image">
-                    <img alt="K-pop" src="assets/index/kpop.jpeg"/>
-                </div>
-                <div class="service-content">
-                    <h2>K-Pop</h2>
-                    <p>Para quem procura excelência e inovação, este serviço é a escolha perfeita, proporcionando liberdade criativa e resultados diferenciados.</p>
-                </div>
-            </div>
-            <div class="service-item">
-                <div class="service-content">
-                    <h2>Contemporâneo</h2>
-                    <p>Para quem procura excelência e inovação, este serviço é a escolha perfeita, proporcionando liberdade criativa e resultados diferenciados.</p>
-                </div>
-                <div class="service-image">
-                    <img alt="contemporaneo " src="assets/index/contemporaneo.JPG"/>
+                <div class="text-content">
+                    <p>Nossa empresa nasceu em 2016 e, desde então, vem transformando vidas de clientes de todas as idades. Com um método próprio e muita dedicação, oferecemos serviços de excelência com qualidade e comprometimento.</p>
+                    
+                    <p>Mas você sabe por que somos diferentes? Nosso método de trabalho se estende a todas as idades e foi desenvolvido por nossa fundadora, que também é especialista na área.</p>
+                    
+                    <p>O método atende todas as idades e vai ser adaptado de acordo com cada necessidade. Para clientes mais jovens, por exemplo, recorremos a abordagens lúdicas e dinâmicas, com atividades temáticas e exercícios muito divertidos, tudo para ensinar de modo que eles aprendam e se desenvolvam!</p>
+                    
+                    <p>Para clientes mais experientes, a forma de atender começa a mudar. Começamos a aprofundar os conhecimentos, dando ainda mais atenção à técnica, aos detalhes e aos processos específicos de cada área.</p>
+                    
+                    <p class="highlight-text">Acreditamos que é dessa forma que nossos clientes crescem e se desenvolvem!</p>
+                    
+                    <p>O nosso segredo é que o aspecto pedagógico é valorizado em todas as fases do atendimento. O modo como entendemos o processo de aprendizagem e desenvolvimento influencia nossa forma de trabalhar e atender todos os nossos clientes.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Depoimentos Section -->
-    <section class="testimonials" id="depoimentos">
+    <!-- History Section -->
+    <section class="history-section">
         <div class="container">
-            <h3 class="section-label">Depoimentos</h3>
+            <div class="history-header">
+                <p class="section-label">sobre nós</p>
+                <h3>Veja nossa história!</h3>
+            </div>
             
-            <div class="testimonials-slider">
-                <div class="testimonial-track" id="testimonialTrack">
-                    <div class="testimonial-item">
-                        <p class="testimonial-text">Excelente atendimento e profissionalismo. A equipe é muito preparada e tem conexão genuína com os clientes. Recomendo para todos que buscam qualidade e dedicação!</p>
-                        <div class="testimonial-author">
-                            <div class="author-image">
-                                <div class="placeholder-avatar">
-                                    <svg width="80" height="80" viewBox="0 0 80 80">
-                                        <circle cx="40" cy="40" r="40" fill="#f8e5e5"/>
-                                        <text x="40" y="45" text-anchor="middle" font-size="12" fill="#c49a9a">Foto</text>
-                                    </svg>
-                                </div>
-                            </div>
-                            <div class="author-info">
-                                <strong>Maria Silva</strong>
-                                <span>Cliente</span>
-                            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-image">
+                        <div class="placeholder-history">
+                            <svg width="100%" height="100%" viewBox="0 0 600 400">
+                                <rect width="600" height="400" fill="#f8e5e5"/>
+                                <text x="50%" y="50%" text-anchor="middle" dy=".3em" font-size="20" fill="#c49a9a">Imagem Histórica</text>
+                            </svg>
                         </div>
                     </div>
-
-                    <div class="testimonial-item">
-                        <p class="testimonial-text">Desde a primeira vez que conhecemos, foi amor à primeira vista. É de fato a realização de um sonho. Cada ano que passa, ficamos mais satisfeitos com os resultados.</p>
-                        <div class="testimonial-author">
-                            <div class="author-image">
-                                <div class="placeholder-avatar">
-                                    <svg width="80" height="80" viewBox="0 0 80 80">
-                                        <circle cx="40" cy="40" r="40" fill="#e5f0f8"/>
-                                        <text x="40" y="45" text-anchor="middle" font-size="12" fill="#9ab8c4">Foto</text>
-                                    </svg>
-                                </div>
-                            </div>
-                            <div class="author-info">
-                                <strong>João e Ana</strong>
-                                <span>Parceiros</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="testimonial-item">
-                        <p class="testimonial-text">Uma das melhores experiências que já tive. Me deu a oportunidade de realizar algo que sempre quis. Todos me acolheram muito bem, os profissionais são ótimos!</p>
-                        <div class="testimonial-author">
-                            <div class="author-image">
-                                <div class="placeholder-avatar">
-                                    <svg width="80" height="80" viewBox="0 0 80 80">
-                                        <circle cx="40" cy="40" r="40" fill="#e5f8e8"/>
-                                        <text x="40" y="45" text-anchor="middle" font-size="12" fill="#9ac4a0">Foto</text>
-                                    </svg>
-                                </div>
-                            </div>
-                            <div class="author-info">
-                                <strong>Gabriela Santos</strong>
-                                <span>Cliente</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="testimonial-item">
-                        <p class="testimonial-text">É terapêutico para mim. Às vezes chego sem muita motivação, mas quando estou aqui as coisas mudam. Acho o ambiente incrível, principalmente pela equipe que torna tudo mais leve.</p>
-                        <div class="testimonial-author">
-                            <div class="author-image">
-                                <div class="placeholder-avatar">
-                                    <svg width="80" height="80" viewBox="0 0 80 80">
-                                        <circle cx="40" cy="40" r="40" fill="#f8f0e5"/>
-                                        <text x="40" y="45" text-anchor="middle" font-size="12" fill="#c4b29a">Foto</text>
-                                    </svg>
-                                </div>
-                            </div>
-                            <div class="author-info">
-                                <strong>Larissa Oliveira</strong>
-                                <span>Cliente</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="testimonial-item">
-                        <p class="testimonial-text">Estou aqui desde 2019. O que foi mais importante foi o acolhimento e o respeito. Quando cheguei era tudo novo, mas o que mais me chamou atenção foi o carinho e profissionalismo.</p>
-                        <div class="testimonial-author">
-                            <div class="author-image">
-                                <div class="placeholder-avatar">
-                                    <svg width="80" height="80" viewBox="0 0 80 80">
-                                        <circle cx="40" cy="40" r="40" fill="#f0e5f8"/>
-                                        <text x="40" y="45" text-anchor="middle" font-size="12" fill="#b89ac4">Foto</text>
-                                    </svg>
-                                </div>
-                            </div>
-                            <div class="author-info">
-                                <strong>Fernanda Costa</strong>
-                                <span>Cliente</span>
-                            </div>
-                        </div>
+                    <div class="timeline-content">
+                        <p>Desde o primeiro dia nossa dedicação aos clientes foi intensa, pensando em materiais especiais e atendimento diferenciado.</p>
                     </div>
                 </div>
 
-                <button class="slider-btn prev" id="prevBtn" aria-label="Anterior">‹</button>
-                <button class="slider-btn next" id="nextBtn" aria-label="Próximo">›</button>
+                <div class="timeline-item reverse">
+                    <div class="timeline-image">
+                        <div class="placeholder-history">
+                            <svg width="100%" height="100%" viewBox="0 0 600 400">
+                                <rect width="600" height="400" fill="#e5f0f8"/>
+                                <text x="50%" y="50%" text-anchor="middle" dy=".3em" font-size="20" fill="#9ab8c4">Imagem Histórica</text>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="timeline-content">
+                        <p>Nossa empresa cresceu e ganhou novos clientes e parceiros apaixonados pela qualidade e pelos benefícios incríveis que nossos serviços proporcionam.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Structure Gallery Section -->
+    <section class="structure-section">
+        <div class="container">
+            <h4 class="section-subtitle center">nossa estrutura</h4>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="/assets/sobre/entrada.jpeg" alt="entrada">
+                    </div>
+                    <p class="gallery-caption">A entrada principal</p>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="/assets/sobre/recepcao.jpeg" alt="Recepção">
+                    </div>
+                    <p class="gallery-caption">Recepção confortável e ampla</p>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="/assets/sobre/loja.jpeg" alt="Loja">
+                    </div>
+                    <p class="gallery-caption">Loja completa</p>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <div class="placeholder-gallery">
+                            <img src="/assets/sobre/sala.jpeg" alt="Sala">
+                        </div>
+                    </div>
+                    <p class="gallery-caption">Sala de Aula</p>
+                </div>
+
+                <!-- caso um dia tenha fotos dos espetaculos -->
+                <!-- <div class="gallery-item">
+                    <div class="gallery-image">
+                        <div class="placeholder-gallery">
+                            <svg width="100%" height="100%" viewBox="0 0 600 400">
+                                <rect width="600" height="400" fill="#f8e8e5"/>
+                                <text x="50%" y="50%" text-anchor="middle" dy=".3em" font-size="18" fill="#c4a09a">Foto do Local</text>
+                            </svg>
+                        </div>
+                    </div>
+                    <p class="gallery-caption">Nossa galeria</p>
+                </div> -->
+
+            
             </div>
         </div>
     </section>
@@ -391,7 +301,6 @@
         </div>
     </section>
 
-
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -419,7 +328,7 @@
     </footer>
 
     <!-- Botão WhatsApp Flutuante -->
-    <a href="https://api.whatsapp.com/send?phone=556892247013&text=Olá,%20gostaria%20de%20mais%20informações" 
+    <a href="https://api.whatsapp.com/send?phone=5500000000000&text=Olá,%20gostaria%20de%20mais%20informações" 
        class="whatsapp-float" 
        target="_blank" 
        aria-label="WhatsApp">
