@@ -216,6 +216,7 @@ h1, h2, h3, h4 {
     background: var(--white);
     border-top: 1px solid var(--border-color);
     padding: 20px 0;
+    text-align: center;
 }
 
 .nav-mobile.active {
@@ -259,6 +260,26 @@ h1, h2, h3, h4 {
 
 .social-links-mobile a:hover {
     color: var(--primary-color);
+}
+
+.nav-mobile-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px auto 0;
+    padding: 12px 26px;
+    background: var(--primary-color);
+    color: var(--white);
+    border-radius: 999px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.nav-mobile-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(251, 125, 150, 0.35);
 }
 
 /* Hero Section */
@@ -851,6 +872,99 @@ h1, h2, h3, h4 {
 
     .slider-btn.next {
         right: 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    .header {
+        border-radius: 0 0 18px 18px;
+    }
+
+    .header-content {
+        padding: 14px 0;
+        gap: 12px;
+    }
+
+    .logo img {
+        height: 42px;
+    }
+
+    .logo-slogan {
+        font-size: 9px;
+        letter-spacing: 0.25em;
+    }
+
+    .hero {
+        padding: 60px 16px;
+    }
+
+    .hero-text h2 {
+        font-size: 24px;
+    }
+
+    .hero-author {
+        font-size: 16px;
+    }
+
+    .featured h2 {
+        font-size: 26px;
+    }
+
+    .featured p {
+        font-size: 16px;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        padding: 12px 28px;
+        font-size: 14px;
+    }
+
+    .service-content h2 {
+        font-size: 24px;
+    }
+
+    .service-content p {
+        font-size: 16px;
+    }
+
+    .differentials h2 {
+        font-size: 26px;
+    }
+
+    .differentials p {
+        font-size: 16px;
+    }
+
+    .testimonials {
+        padding: 60px 16px;
+    }
+
+    .testimonial-item {
+        padding: 24px;
+    }
+
+    .slider-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+
+    .contact-items-row {
+        gap: 18px;
+        margin-bottom: 30px;
+    }
+
+    .schedule-box {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .whatsapp-float {
+        width: 52px;
+        height: 52px;
+        bottom: 20px;
+        right: 20px;
     }
 }
 

@@ -1,8 +1,13 @@
 ﻿// Menu Mobile Toggle
-const menuToggle = document.getElementById('menuToggle');
-const navMobile = document.getElementById('navMobile');
+function bindMobileMenu() {
+    const menuToggle = document.getElementById('menuToggle');
+    const navMobile = document.getElementById('navMobile');
 
-if (menuToggle && navMobile) {
+    if (!menuToggle || !navMobile) return;
+    if (menuToggle.dataset.bound === '1') return;
+
+    menuToggle.dataset.bound = '1';
+
     menuToggle.addEventListener('click', () => {
         menuToggle.classList.toggle('active');
         navMobile.classList.toggle('active');
@@ -17,6 +22,9 @@ if (menuToggle && navMobile) {
         });
     });
 }
+
+document.addEventListener('DOMContentLoaded', bindMobileMenu);
+document.addEventListener('components:rendered', bindMobileMenu);
 
 // Testimonials Slider
 const track = document.getElementById('testimonialTrack');
@@ -120,3 +128,4 @@ document.querySelectorAll('.service-item, .testimonial-item, .info-item').forEac
     el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
     observer.observe(el);
 });
+

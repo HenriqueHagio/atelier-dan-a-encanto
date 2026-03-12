@@ -63,12 +63,13 @@ function renderComponents() {
 
       <nav class="nav-mobile" id="navMobile">
         <ul>
-          <li><a href="${anchor('#Inicio')}">Início</a></li>
+          <li><a href="${anchor('#inicio')}">Início</a></li>
           <li><a href="equipe.html">Equipe</a></li>
           <li><a href="sobre.html">Sobre Nós</a></li>
           <li><a href="${anchor('#depoimentos')}">Depoimentos</a></li>
           <li><a href="${anchor('#contato')}">Contato</a></li>
         </ul>
+        <a class="nav-mobile-cta" href="https://api.whatsapp.com/send?phone=556892247013" target="_blank">Agendar Aula</a>
         <div class="social-links-mobile">
           <a href="#" target="_blank" aria-label="Facebook">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -221,6 +222,8 @@ function renderComponents() {
   setHtml(COMPONENT_SELECTORS.contact, contactHtml);
   setHtml(COMPONENT_SELECTORS.footer, footerHtml);
   setHtml(COMPONENT_SELECTORS.whatsapp, whatsappHtml);
+
+  document.dispatchEvent(new CustomEvent('components:rendered'));
 }
 
 if (document.readyState === 'loading') {
