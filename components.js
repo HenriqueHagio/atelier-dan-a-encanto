@@ -20,17 +20,20 @@ function renderComponents() {
             <a href="index.html">
               <img src="assets/img/logos/LOGOTIPO_05-SIMBOLO_ROSE.png" alt="Logo Atelier">
             </a>
+            <span class="logo-slogan">Magia, Arte e Encanto</span>
           </div>
 
           <nav class="nav-desktop">
             <ul>
-              <li><a href="${anchor('#Inicio')}" ${isHome ? 'class="active"' : ''}>Início</a></li>
+              <li><a href="${anchor('#inicio')}" ${isHome ? 'class="active"' : ''}>Início</a></li>
               <li><a href="equipe.html" ${activeClass('equipe')}>Equipe</a></li>
               <li><a href="sobre.html" ${activeClass('sobre')}>Sobre Nós</a></li>
               <li><a href="${anchor('#depoimentos')}">Depoimentos</a></li>
               <li><a href="${anchor('#contato')}">Contato</a></li>
             </ul>
           </nav>
+
+          <a class="nav-cta" href="https://api.whatsapp.com/send?phone=556892247013" target="_blank">Agendar Aula</a>
 
           <div class="social-links">
             <a href="#" target="_blank" aria-label="Facebook">
@@ -174,6 +177,7 @@ function renderComponents() {
     <footer class="footer">
       <div class="container">
         <div class="footer-content">
+          <img class="footer-badge" src="assets/img/logos/LOGOTIPO_05-SIMBOLO_BEGE.png" alt="Atelier Danca">
           <p>&copy; Atelier Dança. TODOS OS DIREITOS RESERVADOS</p>
           <div class="footer-social">
             <a href="#" target="_blank" aria-label="Facebook">
@@ -224,4 +228,3 @@ if (document.readyState === 'loading') {
 } else {
   renderComponents();
 }
-
