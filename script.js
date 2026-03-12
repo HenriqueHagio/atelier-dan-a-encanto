@@ -1,20 +1,22 @@
-// Menu Mobile Toggle
+﻿// Menu Mobile Toggle
 const menuToggle = document.getElementById('menuToggle');
 const navMobile = document.getElementById('navMobile');
 
-menuToggle.addEventListener('click', () => {
-    menuToggle.classList.toggle('active');
-    navMobile.classList.toggle('active');
-});
-
-// Fechar menu ao clicar em um link
-const navLinks = navMobile.querySelectorAll('a');
-navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        menuToggle.classList.remove('active');
-        navMobile.classList.remove('active');
+if (menuToggle && navMobile) {
+    menuToggle.addEventListener('click', () => {
+        menuToggle.classList.toggle('active');
+        navMobile.classList.toggle('active');
     });
-});
+
+    // Fechar menu ao clicar em um link
+    const navLinks = navMobile.querySelectorAll('a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            menuToggle.classList.remove('active');
+            navMobile.classList.remove('active');
+        });
+    });
+}
 
 // Testimonials Slider
 const track = document.getElementById('testimonialTrack');
@@ -26,37 +28,40 @@ let currentIndex = 0;
 const totalTestimonials = testimonials.length;
 
 function updateSlider() {
+    if (!track) return;
     const offset = -currentIndex * 100;
     track.style.transform = `translateX(${offset}%)`;
 }
 
-nextBtn.addEventListener('click', () => {
-    currentIndex = (currentIndex + 1) % totalTestimonials;
-    updateSlider();
-});
-
-prevBtn.addEventListener('click', () => {
-    currentIndex = (currentIndex - 1 + totalTestimonials) % totalTestimonials;
-    updateSlider();
-});
-
-// Auto-play slider (opcional)
-let autoPlayInterval = setInterval(() => {
-    currentIndex = (currentIndex + 1) % totalTestimonials;
-    updateSlider();
-}, 5000);
-
-// Pausar auto-play ao interagir
-[prevBtn, nextBtn].forEach(btn => {
-    btn.addEventListener('click', () => {
-        clearInterval(autoPlayInterval);
-        // Reiniciar auto-play após 10 segundos
-        autoPlayInterval = setInterval(() => {
-            currentIndex = (currentIndex + 1) % totalTestimonials;
-            updateSlider();
-        }, 5000);
+if (track && prevBtn && nextBtn && totalTestimonials > 0) {
+    nextBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % totalTestimonials;
+        updateSlider();
     });
-});
+
+    prevBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + totalTestimonials) % totalTestimonials;
+        updateSlider();
+    });
+
+    // Auto-play slider (opcional)
+    let autoPlayInterval = setInterval(() => {
+        currentIndex = (currentIndex + 1) % totalTestimonials;
+        updateSlider();
+    }, 5000);
+
+    // Pausar auto-play ao interagir
+    [prevBtn, nextBtn].forEach(btn => {
+        btn.addEventListener('click', () => {
+            clearInterval(autoPlayInterval);
+            // Reiniciar auto-play apos 10 segundos
+            autoPlayInterval = setInterval(() => {
+                currentIndex = (currentIndex + 1) % totalTestimonials;
+                updateSlider();
+            }, 5000);
+        });
+    });
+}
 
 // Smooth scroll para links internos
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -81,18 +86,19 @@ let lastScroll = 0;
 const header = document.querySelector('.header');
 
 window.addEventListener('scroll', () => {
+    if (!header) return;
     const currentScroll = window.pageYOffset;
-    
+
     if (currentScroll > 100) {
         header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.15)';
     } else {
         header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
     }
-    
+
     lastScroll = currentScroll;
 });
 
-// Intersection Observer para animações ao scroll
+// Intersection Observer para animacoes ao scroll
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'

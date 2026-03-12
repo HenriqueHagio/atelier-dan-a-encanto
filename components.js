@@ -1,0 +1,227 @@
+﻿const COMPONENT_SELECTORS = {
+  header: '[data-component="header"]',
+  contact: '[data-component="contact"]',
+  footer: '[data-component="footer"]',
+  whatsapp: '[data-component="whatsapp"]'
+};
+
+function renderComponents() {
+  const page = document.body.dataset.page || 'home';
+  const isHome = page === 'home';
+
+  const activeClass = (name) => (page === name ? 'class="active"' : '');
+  const anchor = (hash) => (isHome ? hash : `index.html${hash}`);
+
+  const headerHtml = `
+    <header class="header">
+      <div class="container">
+        <div class="header-content">
+          <div class="logo">
+            <a href="index.html">
+              <img src="assets/img/logos/LOGOTIPO_05-SIMBOLO_ROSE.png" alt="Logo Atelier">
+            </a>
+          </div>
+
+          <nav class="nav-desktop">
+            <ul>
+              <li><a href="${anchor('#Inicio')}" ${isHome ? 'class="active"' : ''}>Início</a></li>
+              <li><a href="equipe.html" ${activeClass('equipe')}>Equipe</a></li>
+              <li><a href="sobre.html" ${activeClass('sobre')}>Sobre Nós</a></li>
+              <li><a href="${anchor('#depoimentos')}">Depoimentos</a></li>
+              <li><a href="${anchor('#contato')}">Contato</a></li>
+            </ul>
+          </nav>
+
+          <div class="social-links">
+            <a href="#" target="_blank" aria-label="Facebook">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+              </svg>
+            </a>
+            <a href="#" target="_blank" aria-label="Instagram">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+            </a>
+            <a href="#" target="_blank" aria-label="YouTube">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+              </svg>
+            </a>
+          </div>
+
+          <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+
+      <nav class="nav-mobile" id="navMobile">
+        <ul>
+          <li><a href="${anchor('#Inicio')}">Início</a></li>
+          <li><a href="equipe.html">Equipe</a></li>
+          <li><a href="sobre.html">Sobre Nós</a></li>
+          <li><a href="${anchor('#depoimentos')}">Depoimentos</a></li>
+          <li><a href="${anchor('#contato')}">Contato</a></li>
+        </ul>
+        <div class="social-links-mobile">
+          <a href="#" target="_blank" aria-label="Facebook">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+          </a>
+          <a href="#" target="_blank" aria-label="Instagram">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+          </a>
+          <a href="#" target="_blank" aria-label="YouTube">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+            </svg>
+          </a>
+        </div>
+      </nav>
+    </header>
+  `;
+
+  const contactHtml = `
+    <section class="contact" id="contato">
+      <div class="container">
+        <h2 class="contact-title">Entre em contato</h2>
+        <div class="contact-items-row">
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="#d4368c">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+              </svg>
+            </div>
+            <a href="https://maps.app.goo.gl/L8R3YQexycMwY6vj8" target="_blank" style="text-decoration: none;">R. Marte, 1530 - sala 01 - Morada do Sol</a>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="#d4368c">
+                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+              </svg>
+            </div>
+            <a href="mailto:atelierdança.ac@gmail.com" target="_blank" style="text-decoration: none;">atelierdança.ac@gmail.com</a>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="#d4368c">
+                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+              </svg>
+            </div>
+            <a href="https://api.whatsapp.com/send?phone=556892247013&text=Olá,%20gostaria%20de%20mais%20informações" style="text-decoration: none;" target="_blank">+55 68 9224-7013</a>
+          </div>
+        </div>
+        <div class="contact-items-row">
+          <div class="schedule-box">
+            <h2>SEGUNDA-FEIRA</h2>
+            <p>15:00 - Tecido Acrobático Infantil (7+)</p>
+            <p>16:00 - Tecido Acrobático Juvenil (11+)</p>
+            <p>17:10 - Jazz Adulto Básico (16+)</p>
+            <p>18:10 - Jazz Adulto Iniciante (16+)</p>
+            <p>19:15 - Ballet Adulto Básico (16+)</p>
+          </div>
+          <div class="schedule-box">
+            <h2>TERÇA-FEIRA</h2>
+            <p>15:00 - Ballet Baby (3 e 4 anos)</p>
+            <p>16:00 - Pré-Ballet (5 a 7 anos)</p>
+            <p>17:00 - Jazz Infanto/Juvenil (8+)</p>
+            <p>18:00 - Iniciação ao Ballet (8+)</p>
+            <p>19:00 - Ballet Adulto Iniciante (16+)</p>
+            <p>20:10 - Contemporâneo Adulto Iniciante (16+)</p>
+          </div>
+          <div class="schedule-box">
+            <h2>QUARTA-FEIRA</h2>
+            <p>09:00 - Tecido Acrobático Infanto/Juvenil</p>
+            <p>15:00 - Tecido Acrobático Infantil (7+)</p>
+            <p>16:00 - Tecido Acrobático Juvenil (11+)</p>
+            <p>17:10 - Jazz Adulto Básico (16+)</p>
+            <p>18:10 - Jazz Adulto Iniciante (16+)</p>
+            <p>19:15 - Ballet Adulto Básico (16+)</p>
+          </div>
+          <div class="schedule-box">
+            <h2>QUINTA-FEIRA</h2>
+            <p>15:00 - Ballet Baby (3 e 4 anos)</p>
+            <p>16:00 - Pré-Ballet (5 a 7 anos)</p>
+            <p>17:00 - Jazz Infanto/Juvenil (8+)</p>
+            <p>18:00 - Iniciaçãoo ao Ballet (8+)</p>
+            <p>19:00 - Ballet Adulto Iniciante (16+)</p>
+            <p>20:10 - Contemporâneo Adulto Iniciante (16+)</p>
+          </div>
+          <div class="schedule-box">
+            <h2>SEXTA-FEIRA</h2>
+            <p>09:00 - Tecido Acrobático Infanto/Juvenil</p>
+          </div>
+          <div class="schedule-box">
+            <h2>SÁBADO</h2>
+            <p>08:50 - Tecido Acrobático Adulto (16+)</p>
+            <p>10:00 - Ballet Adulto Iniciante (16+)</p>
+            <p>11:00 - K-Pop Infanto/Juvenil (7+)</p>
+            <p>16:30 - K-Pop Juvenil/Adulto (13+)</p>
+            <p>18:00 - Jazz Funk Adulto (18+)</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  `;
+
+  const footerHtml = `
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <p>&copy; Atelier Dança. TODOS OS DIREITOS RESERVADOS</p>
+          <div class="footer-social">
+            <a href="#" target="_blank" aria-label="Facebook">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+              </svg>
+            </a>
+            <a href="#" target="_blank" aria-label="Instagram">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+            </a>
+            <a href="#" target="_blank" aria-label="YouTube">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  `;
+
+  const whatsappHtml = `
+    <a href="https://api.whatsapp.com/send?phone=556892247013&text=Olá,%20gostaria%20de%20mais%20informações"
+       class="whatsapp-float"
+       target="_blank"
+       aria-label="WhatsApp">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="white">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+      </svg>
+    </a>
+  `;
+
+  const setHtml = (selector, html) => {
+    const el = document.querySelector(selector);
+    if (el) el.innerHTML = html;
+  };
+
+  setHtml(COMPONENT_SELECTORS.header, headerHtml);
+  setHtml(COMPONENT_SELECTORS.contact, contactHtml);
+  setHtml(COMPONENT_SELECTORS.footer, footerHtml);
+  setHtml(COMPONENT_SELECTORS.whatsapp, whatsappHtml);
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', renderComponents);
+} else {
+  renderComponents();
+}
+
