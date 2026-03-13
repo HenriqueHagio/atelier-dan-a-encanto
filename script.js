@@ -26,51 +26,6 @@ function bindMobileMenu() {
 document.addEventListener('DOMContentLoaded', bindMobileMenu);
 document.addEventListener('components:rendered', bindMobileMenu);
 
-// Testimonials Slider
-const track = document.getElementById('testimonialTrack');
-const prevBtn = document.getElementById('prevBtn');
-const nextBtn = document.getElementById('nextBtn');
-const testimonials = document.querySelectorAll('.testimonial-item');
-
-let currentIndex = 0;
-const totalTestimonials = testimonials.length;
-
-function updateSlider() {
-    if (!track) return;
-    const offset = -currentIndex * 100;
-    track.style.transform = `translateX(${offset}%)`;
-}
-
-if (track && prevBtn && nextBtn && totalTestimonials > 0) {
-    nextBtn.addEventListener('click', () => {
-        currentIndex = (currentIndex + 1) % totalTestimonials;
-        updateSlider();
-    });
-
-    prevBtn.addEventListener('click', () => {
-        currentIndex = (currentIndex - 1 + totalTestimonials) % totalTestimonials;
-        updateSlider();
-    });
-
-    // Auto-play slider (opcional)
-    let autoPlayInterval = setInterval(() => {
-        currentIndex = (currentIndex + 1) % totalTestimonials;
-        updateSlider();
-    }, 5000);
-
-    // Pausar auto-play ao interagir
-    [prevBtn, nextBtn].forEach(btn => {
-        btn.addEventListener('click', () => {
-            clearInterval(autoPlayInterval);
-            // Reiniciar auto-play apos 10 segundos
-            autoPlayInterval = setInterval(() => {
-                currentIndex = (currentIndex + 1) % totalTestimonials;
-                updateSlider();
-            }, 5000);
-        });
-    });
-}
-
 // Smooth scroll para links internos
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -121,11 +76,16 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Observar elementos que devem animar
-document.querySelectorAll('.service-item, .testimonial-item, .info-item').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(30px)';
-    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    observer.observe(el);
+function observeAnimatedElements() {
+    document.querySelectorAll('.service-item, .info-item').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(el);
+    });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    observeAnimatedElements();
 });
 
