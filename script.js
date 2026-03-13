@@ -52,6 +52,9 @@ function bindStructureCarousel() {
     let originalWidth = 0;
     const updateOriginalWidth = () => {
         originalWidth = track.scrollWidth / 2;
+        if (originalWidth && track.scrollLeft === 0) {
+            track.scrollLeft = originalWidth;
+        }
     };
     updateOriginalWidth();
 
@@ -65,17 +68,22 @@ function bindStructureCarousel() {
         track.scrollBy({ left: distance, behavior: prefersReducedMotion ? 'auto' : 'smooth' });
     };
 
+    let wrapTimeout = null;
     const wrapScroll = () => {
         if (!originalWidth) return;
-        if (track.scrollLeft >= originalWidth) {
+        const maxLeft = originalWidth * 2;
+        if (track.scrollLeft >= maxLeft - 2) {
             track.scrollLeft -= originalWidth;
-        } else if (track.scrollLeft < 0) {
+        } else if (track.scrollLeft <= 2) {
             track.scrollLeft += originalWidth;
         }
     };
 
     track.addEventListener('scroll', () => {
-        window.requestAnimationFrame(wrapScroll);
+        if (wrapTimeout) {
+            clearTimeout(wrapTimeout);
+        }
+        wrapTimeout = setTimeout(wrapScroll, 140);
     });
 
     prevBtn.addEventListener('click', () => scrollByCard(-1));
