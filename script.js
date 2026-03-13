@@ -26,6 +26,83 @@ function bindMobileMenu() {
 document.addEventListener('DOMContentLoaded', bindMobileMenu);
 document.addEventListener('components:rendered', bindMobileMenu);
 
+function bindStructureCarousel() {
+    const carousel = document.querySelector('.structure-carousel');
+    if (!carousel) return;
+
+    const track = carousel.querySelector('.carousel-track');
+    const prevBtn = carousel.querySelector('.carousel-btn.prev');
+    const nextBtn = carousel.querySelector('.carousel-btn.next');
+    if (!track || !prevBtn || !nextBtn) return;
+    if (carousel.dataset.bound === '1') return;
+
+    carousel.dataset.bound = '1';
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let autoplayId = null;
+    const originalItems = Array.from(track.children);
+    if (!originalItems.length) return;
+
+    originalItems.forEach((item) => {
+        const clone = item.cloneNode(true);
+        clone.setAttribute('aria-hidden', 'true');
+        track.appendChild(clone);
+    });
+
+    let originalWidth = 0;
+    const updateOriginalWidth = () => {
+        originalWidth = track.scrollWidth / 2;
+    };
+    updateOriginalWidth();
+
+    const scrollByCard = (direction) => {
+        const firstCard = track.querySelector('.gallery-item');
+        if (!firstCard) return;
+        const styles = getComputedStyle(track);
+        const gap = parseFloat(styles.columnGap || styles.gap || 0);
+        const cardWidth = firstCard.getBoundingClientRect().width;
+        const distance = (cardWidth + gap) * direction;
+        track.scrollBy({ left: distance, behavior: prefersReducedMotion ? 'auto' : 'smooth' });
+    };
+
+    const wrapScroll = () => {
+        if (!originalWidth) return;
+        if (track.scrollLeft >= originalWidth) {
+            track.scrollLeft -= originalWidth;
+        } else if (track.scrollLeft < 0) {
+            track.scrollLeft += originalWidth;
+        }
+    };
+
+    track.addEventListener('scroll', () => {
+        window.requestAnimationFrame(wrapScroll);
+    });
+
+    prevBtn.addEventListener('click', () => scrollByCard(-1));
+    nextBtn.addEventListener('click', () => scrollByCard(1));
+
+    const startAutoplay = () => {
+        if (prefersReducedMotion) return;
+        if (autoplayId) return;
+        autoplayId = setInterval(() => scrollByCard(1), 4500);
+    };
+
+    const stopAutoplay = () => {
+        if (!autoplayId) return;
+        clearInterval(autoplayId);
+        autoplayId = null;
+    };
+
+    startAutoplay();
+
+    carousel.addEventListener('mouseenter', stopAutoplay);
+    carousel.addEventListener('mouseleave', startAutoplay);
+    carousel.addEventListener('focusin', stopAutoplay);
+    carousel.addEventListener('focusout', startAutoplay);
+
+    window.addEventListener('resize', updateOriginalWidth);
+}
+
 // Smooth scroll para links internos
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -87,5 +164,8 @@ function observeAnimatedElements() {
 
 document.addEventListener('DOMContentLoaded', () => {
     observeAnimatedElements();
+    bindStructureCarousel();
 });
+
+document.addEventListener('components:rendered', bindStructureCarousel);
 
