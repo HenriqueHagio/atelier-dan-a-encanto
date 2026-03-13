@@ -2,3 +2,10 @@
 NOME E LOGO-20260312T211453Z-3-001/
 MANUAL DA MARCA.txt
 MANUAL DA MARCA.pdf
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+.env*
+!.env.example
